@@ -8,8 +8,8 @@ from streamlit.runtime.scriptrunner import add_script_run_ctx
 st.title("TCP 客户端 (Streamlit 版)")
 
 # 配置连接信息（统一使用 127.0.0.1:8000 以便本地测试）
-HOST = '127.0.0.1'
-PORT = 8000
+HOST = '111.228.4.63'
+PORT = 2000
 
 # 初始化 session_state
 if 'socket' not in st.session_state:
