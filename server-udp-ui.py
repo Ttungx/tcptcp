@@ -2,7 +2,7 @@ import streamlit as st
 import socket
 import time
 
-st.title("UDP 服务端 (单线程版)")
+st.title("UDP 服务端")
 
 HOST = '127.0.0.1'
 PORT = 9000
@@ -65,7 +65,7 @@ else:
     st.info("等待客户端消息以获取地址...")
 
 # 自动刷新控制
-auto_refresh = st.checkbox("自动刷新消息 (每秒)", value=True)
+auto_refresh = st.checkbox("自动刷新消息", value=True)
 
 # 显示日志
 st.divider()

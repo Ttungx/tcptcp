@@ -2,13 +2,14 @@ import streamlit as st
 import socket
 import time
 
-st.title("TCP 客户端 (单线程版)")
+st.title("TCP 客户端")
 
 HOST = '111.228.4.63'
 PORT = 2000
 
 # HOST = '99960562ap.goho.co'
 # PORT = 45294
+
 # 初始化 session_state
 if 'socket' not in st.session_state:
     st.session_state.socket = None
@@ -81,7 +82,7 @@ else:
         st.rerun()
 
 # 自动刷新控制
-auto_refresh = st.checkbox("自动刷新消息 (每秒)", value=True)
+auto_refresh = st.checkbox("自动刷新消息", value=True)
 
 # 显示日志
 st.divider()

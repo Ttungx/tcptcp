@@ -3,7 +3,7 @@ import socket
 import time
 
 # 设置页面标题
-st.title("TCP 服务端 (单线程版)")
+st.title("TCP 服务端")
 
 # 配置信息
 HOST = '127.0.0.1'
@@ -93,7 +93,7 @@ else:
     st.info("等待客户端连接...")
 
 # 自动刷新控制
-auto_refresh = st.checkbox("自动刷新消息 (每秒)", value=True)
+auto_refresh = st.checkbox("自动刷新消息", value=True)
 
 # 显示日志
 st.divider()

@@ -2,7 +2,7 @@ import streamlit as st
 import socket
 import time
 
-st.title("UDP 客户端 (单线程版)")
+st.title("UDP 客户端")
 
 HOST = '111.228.4.63'
 PORT = 2001
@@ -57,7 +57,6 @@ if st.session_state.connected and st.session_state.socket:
                 break # 没有数据了
     except Exception as e:
         st.session_state.logs.append(f"接收异常: {e}")
-        # UDP 异常通常不致命，不一定要断开
 
 # UI 布局
 if not st.session_state.connected:
