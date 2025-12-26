@@ -82,7 +82,7 @@ else:
         st.rerun()
 
 # 自动刷新控制
-auto_refresh = st.checkbox("自动刷新消息 (每秒)", value=True)
+auto_refresh = st.checkbox("自动刷新消息 (0.5秒)", value=True)
 
 # 显示日志
 st.divider()
@@ -94,5 +94,5 @@ for log in reversed(st.session_state.logs):
     st.text(log)
 
 if auto_refresh and st.session_state.connected:
-    time.sleep(1)
+    time.sleep(0.5)
     st.rerun()

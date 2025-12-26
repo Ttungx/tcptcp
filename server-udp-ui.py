@@ -2,10 +2,11 @@ import streamlit as st
 import socket
 import time
 
-st.title("UDP 服务端")
+st.title("UDP 服务端 (单线程版)")
 
+# 配置信息
 HOST = '127.0.0.1'
-PORT = 9000
+PORT = 9000  # 对应 frpc-server.toml 中的 localPort
 
 # 初始化 session_state
 if 'server_logs' not in st.session_state:
@@ -46,7 +47,7 @@ if st.session_state.server_socket:
         st.session_state.server_logs.append(f"接收异常: {e}")
 
 # UI 布局
-st.success("服务端正在运行 (轮询模式)...")
+st.success(f"服务端正在运行 (监听 {HOST}:{PORT})")
 
 # 发送消息区域
 if st.session_state.client_addr:
@@ -65,7 +66,7 @@ else:
     st.info("等待客户端消息以获取地址...")
 
 # 自动刷新控制
-auto_refresh = st.checkbox("自动刷新消息", value=True)
+auto_refresh = st.checkbox("自动刷新消息 (0.5秒)", value=True)
 
 # 显示日志
 st.divider()
@@ -77,5 +78,5 @@ for log in reversed(st.session_state.server_logs):
     st.text(log)
 
 if auto_refresh:
-    time.sleep(1)
+    time.sleep(0.5)
     st.rerun()
